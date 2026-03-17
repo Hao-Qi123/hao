@@ -1,0 +1,17 @@
+Mysql:
+  Host: "180.184.76.50"
+  Port: 3306
+  User: "root"
+  Password: "123456"
+  Database: "seckill"
+Redis:
+  Host: "180.184.76.50"
+  Port: 6379
+  Password: ""
+  Database: 0
+Consul:
+  Host: "180.184.76.50"
+  Port: 8500
+  ServiceName: "product"
+  ServicePort: 50051
+  TTL: 30

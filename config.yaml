@@ -1,0 +1,28 @@
+Mysql:
+  Host: "180.184.76.50"
+  Port: 3306
+  User: "root"
+  Password: "123456"
+  Database: "seckill"
+Redis:
+  Host: "180.184.76.50"
+  Port: 6379
+  Password: ""
+  Database: 0
+Consul:
+  Host: "180.184.76.50"
+  Port: 8500
+  ServiceName: "product"
+  ServicePort: 50051
+  TTL: 30
+Nacos:
+  Addr: "180.184.76.50"
+  Port: 8848
+  Namespace: "public"
+  DataId: "demo"
+  Group: "DEFAULT_GROUP"
+AliPay:
+  AppID: "9021000157679186"
+  PrivateKey: "MIIEpQIBAAKCAQEAiiOg7z+F/hzbOZdFhsRj7pwIOUqs/G3vQv06pmektvKgMSypdgGmiBeCGZSp5hyUMsR6uW1IyMPucBjwpQd4NMB2rSfOo4GBETJLXelh4ACWd6dlXfzS6ijs5zNuDsboHa0B7hzNBFh3zOWhhhoUVsDh8OWPhZEANwChiTTJ4SymsdKQOP2ONCWJGZsg7y9yIwVfldLKgY/KMQbmOOCjyqLUVXvhk42YtfnCeyv8ltAiX+ld6qX9WzYiFeWtvv8CVrYVpHlt8t54izo9c0QBFuYSXmVUhL6+ybjSBl8mvDMElqxXhKKY04WofjEiZvsqalrUyKnCBoXHNPa2/nmy0QIDAQABAoIBAHpy3JxW9cJr99PUCJhOi7qd6xhF3pMgK994sr2Az9wvs9oDGe/1xJWMKRHd2sCUgrWBvruRaNw1+ay6Hs5aka5JEKmqyJvdFviUWYRUdSLnwnksFEm864UPY/gJebx1ipmLm1NjikQY25Dv2D8T7QV9kopEIvWls8gNsiL6fR0wdMfqXxzHSvK4/moQ45GF8zEWUGPGHNHfZTqIfydoHaBTGh/0nWYa+MPYhxBwSeSOurEs0cZHQ3DLNvpePtoVD75O9Q/G2dixohFPjTX8ShBVoxmAQDMW/+sbdErBB/nGxtzqDpcW82Ac/yNxREcfBwVN00HE791mU+ZF0CmbJgECgYEA0pXoI/mZQZGAkCGkMJ4hM+61zsO0PXWa7AzSJkPyi/rNoa+6Ih5MbKErKbddt3C8h2CWZF6rcbblnfI34dCPpiAV80Z/bn6j3dkvDNdjzIrotZirej9oz6BXt3ba9oU+PIAw0Z8DXBK/ZA/IkA9c3DVM8No/59lqPQSdOCp/LjECgYEAp+4SZWmBTj5kQlchhcX7QFHEfeA5GnDmhNyIJyZGgClEvkvh/YcrsuNlwtcndNbJuuBEhVztit7UHGFio49WlPqtf4tKk5eyUYflIY67lKsDrgKAhJyDWZRHzG7Nxec58l8pu2F5oNV8BYucLhioeuGVLKYDtvlJu/SvC7NQhqECgYEAvmCnrV5JHu3bvHGtbgaHHdwAoRxsJePcWup8Ufu7mrDylem37IBXtx09WEldgCl7RygazkKH3BXtIA2KV6ulMhpvva9OJSZ4HmfqEUHoB1LNbt7Gp44LwyjCJCpfad6rlSaO+/M1pleMj3l1aEd7O9kz5cppW8FCOkehmtVQhQECgYEAkeyh1bgBofE7hB5cxfcNZo3nNg7C8EQNPIS6V3K+Lp4t20LrZTixc2iAw/fclH4UnCxHvq/KxzLslKDXaxOihCD05PEwY+KdFJYHOMrkG8MjlnEcJqAuz4e3gGEEtKVCSGgDRo3keCsq81Km67OHrAgcbcjxT21+cjKkbYFrRyECgYEAz32YOCjyxR/tE35E/fGCbIT+0JVqDlmCvMJ+pbX8bxNwRZfM58jLU235loBJVStJJeXK6hyIyTHLxoxgabqVnFK5/BlkFhLAQciH6WUi6dnftyH2I+8+zE9IRxBI7AMo8QfBsBFQbePRbkfqwGDtGqTbV0eyePTytzpsAqzY13Y="
+  NotifyUrl: "http://70cb589.r16.cpolar.top/order/notify/pay"
+  ReturnUrl: "http://70cb589.r16.cpolar.top/callback"

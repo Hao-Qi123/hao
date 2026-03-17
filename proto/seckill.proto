@@ -1,0 +1,371 @@
+syntax = "proto3";
+
+option go_package ="./";
+
+package proto;
+
+// ------------------------------------ 
+// Messages
+// ------------------------------------ 
+
+//--------------------------------orderItems--------------------------------
+message OrderItems {
+  int64 id = 1; //'璁㈠崟鍟嗗搧ID'
+  int64 orderId = 2; //'璁㈠崟ID'
+  int64 productId = 3; //'鍟嗗搧ID'
+  int64 skuId = 4; //'SKU ID'
+  string productName = 5; //'鍟嗗搧鍚嶇О'
+  string skuName = 6; //'瑙勬牸鍚嶇О'
+  string image = 7; //'鍟嗗搧鍥剧墖'
+  double price = 8; //'鍗曚环'
+  int64 quantity = 9; //'鏁伴噺'
+  double totalAmount = 10; //'鎬讳环'
+  double discountAmount = 11; //'浼樻儬閲戦'
+  double payAmount = 12; //'瀹炰粯閲戦'
+  int64 point = 13; //'璧犻€佺Н鍒?
+  int64 isReviewed = 14; //'鏄惁宸茶瘎浠?
+  int64 createdAt = 15; //'鍒涘缓鏃堕棿'
+}
+
+message AddOrderItemsReq {
+  int64 orderId = 1; //'璁㈠崟ID'
+  int64 productId = 2; //'鍟嗗搧ID'
+  int64 skuId = 3; //'SKU ID'
+  string productName = 4; //'鍟嗗搧鍚嶇О'
+  string skuName = 5; //'瑙勬牸鍚嶇О'
+  string image = 6; //'鍟嗗搧鍥剧墖'
+  double price = 7; //'鍗曚环'
+  int64 quantity = 8; //'鏁伴噺'
+  double totalAmount = 9; //'鎬讳环'
+  double discountAmount = 10; //'浼樻儬閲戦'
+  double payAmount = 11; //'瀹炰粯閲戦'
+  int64 point = 12; //'璧犻€佺Н鍒?
+  int64 isReviewed = 13; //'鏄惁宸茶瘎浠?
+  int64 createdAt = 14; //'鍒涘缓鏃堕棿'
+}
+
+message AddOrderItemsResp {
+}
+
+message UpdateOrderItemsReq {
+  int64 id = 1; //'璁㈠崟鍟嗗搧ID'
+  int64 orderId = 2; //'璁㈠崟ID'
+  int64 productId = 3; //'鍟嗗搧ID'
+  int64 skuId = 4; //'SKU ID'
+  string productName = 5; //'鍟嗗搧鍚嶇О'
+  string skuName = 6; //'瑙勬牸鍚嶇О'
+  string image = 7; //'鍟嗗搧鍥剧墖'
+  double price = 8; //'鍗曚环'
+  int64 quantity = 9; //'鏁伴噺'
+  double totalAmount = 10; //'鎬讳环'
+  double discountAmount = 11; //'浼樻儬閲戦'
+  double payAmount = 12; //'瀹炰粯閲戦'
+  int64 point = 13; //'璧犻€佺Н鍒?
+  int64 isReviewed = 14; //'鏄惁宸茶瘎浠?
+  int64 createdAt = 15; //'鍒涘缓鏃堕棿'
+}
+
+message UpdateOrderItemsResp {
+}
+
+message DelOrderItemsReq {
+  int64 id = 1; //id
+}
+
+message DelOrderItemsResp {
+}
+
+message GetOrderItemsByIdReq {
+  int64 id = 1; //id
+}
+
+message GetOrderItemsByIdResp {
+  OrderItems orderItems = 1; //orderItems
+}
+
+message SearchOrderItemsReq {
+  int64 page = 1; //page
+  int64 limit = 2; //limit
+  int64 id = 3; //'璁㈠崟鍟嗗搧ID'
+  int64 orderId = 4; //'璁㈠崟ID'
+  int64 productId = 5; //'鍟嗗搧ID'
+  int64 skuId = 6; //'SKU ID'
+  string productName = 7; //'鍟嗗搧鍚嶇О'
+  string skuName = 8; //'瑙勬牸鍚嶇О'
+  string image = 9; //'鍟嗗搧鍥剧墖'
+  double price = 10; //'鍗曚环'
+  int64 quantity = 11; //'鏁伴噺'
+  double totalAmount = 12; //'鎬讳环'
+  double discountAmount = 13; //'浼樻儬閲戦'
+  double payAmount = 14; //'瀹炰粯閲戦'
+  int64 point = 15; //'璧犻€佺Н鍒?
+  int64 isReviewed = 16; //'鏄惁宸茶瘎浠?
+  int64 createdAt = 17; //'鍒涘缓鏃堕棿'
+}
+
+message SearchOrderItemsResp {
+  repeated OrderItems orderItems = 1; //orderItems
+}
+
+//--------------------------------orders--------------------------------
+message Orders {
+  int64 id = 1; //'璁㈠崟ID'
+  string orderNo = 2; //'璁㈠崟鍙?
+  int64 memberId = 3; //'浼氬憳ID'
+  int64 productId = 4; //'鍟嗗搧ID'
+  string consignee = 5; //'鏀惰揣浜?
+  string mobile = 6; //'鑱旂郴鐢佃瘽'
+  string address = 7; //'璇︾粏鍦板潃'
+  double totalAmount = 8; //'璁㈠崟鎬婚'
+  double payAmount = 9; //'瀹炰粯閲戦'
+  double freightAmount = 10; //'杩愯垂'
+  int64 paymentMethod = 11; //'鏀粯鏂瑰紡:1寰俊2鏀粯瀹?绉垎'
+  int64 paymentAt = 12; //'鏀粯鏃堕棿'
+  int64 status = 13; //'鐘舵€?1寰呬粯娆?寰呭彂璐?寰呮敹璐?宸插畬鎴?宸插彇娑?鍞悗'
+  int64 orderType = 14; //'璁㈠崟绫诲瀷:1鏅€?绉掓潃3鍥㈣喘'
+  string remark = 15; //'璁㈠崟澶囨敞'
+  string cancelReason = 16; //'鍙栨秷鍘熷洜'
+  int64 createdAt = 17; //'涓嬪崟鏃堕棿'
+  int64 updatedAt = 18; //'鏇存柊鏃堕棿'
+}
+
+message AddOrdersReq {
+  int64 id = 1; //'璁㈠崟ID'
+  string orderNo = 2; //'璁㈠崟鍙?
+  int64 memberId = 3; //'浼氬憳ID'
+  int64 productId = 4; //'鍟嗗搧ID'
+  string consignee = 5; //'鏀惰揣浜?
+  string mobile = 6; //'鑱旂郴鐢佃瘽'
+  string address = 7; //'璇︾粏鍦板潃'
+  double totalAmount = 8; //'璁㈠崟鎬婚'
+  double payAmount = 9; //'瀹炰粯閲戦'
+  double freightAmount = 10; //'杩愯垂'
+  int64 paymentMethod = 11; //'鏀粯鏂瑰紡:1寰俊2鏀粯瀹?绉垎'
+  int64 paymentAt = 12; //'鏀粯鏃堕棿'
+  int64 status = 13; //'鐘舵€?1寰呬粯娆?寰呭彂璐?寰呮敹璐?宸插畬鎴?宸插彇娑?鍞悗'
+  int64 orderType = 14; //'璁㈠崟绫诲瀷:1鏅€?绉掓潃3鍥㈣喘'
+  string remark = 15; //'璁㈠崟澶囨敞'
+  string cancelReason = 16; //'鍙栨秷鍘熷洜'
+  int64 createdAt = 17; //'涓嬪崟鏃堕棿'
+  int64 updatedAt = 18; //'鏇存柊鏃堕棿'
+  int64 Quantity=19;// 购买数量
+}
+
+message AddOrdersResp {
+  int64     ID=1;  // 订单ID
+  string   OrderNo=2;// 订单号
+  int64     ProductID=3;// 商品ID
+  string   ProductName=4;// 商品名称
+  int64      Quantity=5;// 购买数量
+  float  TotalAmount=6;// 订单总金额
+  int64      Status=7;// 订单状态
+  string   remark=8;// 订单备注
+  string   CreatedAt=9;// 创建时间
+  string PayUrl=10;// 支付链接
+  string msg=11;// 消息
+}
+
+message UpdateOrdersReq {
+  int64 id = 1; //'璁㈠崟ID'
+  string orderNo = 2; //'璁㈠崟鍙?
+  int64 memberId = 3; //'浼氬憳ID'
+  int64 productId = 4; //'鍟嗗搧ID'
+  string consignee = 5; //'鏀惰揣浜?
+  string mobile = 6; //'鑱旂郴鐢佃瘽'
+  string address = 7; //'璇︾粏鍦板潃'
+  double totalAmount = 8; //'璁㈠崟鎬婚'
+  double payAmount = 9; //'瀹炰粯閲戦'
+  double freightAmount = 10; //'杩愯垂'
+  int64 paymentMethod = 11; //'鏀粯鏂瑰紡:1寰俊2鏀粯瀹?绉垎'
+  int64 paymentAt = 12; //'鏀粯鏃堕棿'
+  int64 status = 13; //'鐘舵€?1寰呬粯娆?寰呭彂璐?寰呮敹璐?宸插畬鎴?宸插彇娑?鍞悗'
+  int64 orderType = 14; //'璁㈠崟绫诲瀷:1鏅€?绉掓潃3鍥㈣喘'
+  string remark = 15; //'璁㈠崟澶囨敞'
+  string cancelReason = 16; //'鍙栨秷鍘熷洜'
+  int64 createdAt = 17; //'涓嬪崟鏃堕棿'
+  int64 updatedAt = 18; //'鏇存柊鏃堕棿'
+}
+
+message UpdateOrdersResp {
+  int64 code=1;
+  string msg=2;
+}
+
+message DelOrdersReq {
+  int64 id = 1; //id
+}
+
+message DelOrdersResp {
+  int64 code=1;
+  string msg=2;
+}
+
+message GetOrdersByIdReq {
+  int64 id = 1; //id
+}
+
+message GetOrdersByIdResp {
+  int64 code=1;
+  string msg=2;
+  Orders orders = 3; //orders
+}
+
+message SearchOrdersReq {
+  int64 page = 1; //page
+  int64 limit = 2; //limit
+  int64 id = 3; //'璁㈠崟ID'
+  string orderNo = 4; //'璁㈠崟鍙?
+  int64 memberId = 5; //'浼氬憳ID'
+  int64 productId = 6; //'鍟嗗搧ID'
+  string consignee = 7; //'鏀惰揣浜?
+  string mobile = 8; //'鑱旂郴鐢佃瘽'
+  string address = 9; //'璇︾粏鍦板潃'
+  double totalAmount = 10; //'璁㈠崟鎬婚'
+  double payAmount = 11; //'瀹炰粯閲戦'
+  double freightAmount = 12; //'杩愯垂'
+  int64 paymentMethod = 13; //'鏀粯鏂瑰紡:1寰俊2鏀粯瀹?绉垎'
+  int64 paymentAt = 14; //'鏀粯鏃堕棿'
+  int64 status = 15; //'鐘舵€?1寰呬粯娆?寰呭彂璐?寰呮敹璐?宸插畬鎴?宸插彇娑?鍞悗'
+  int64 orderType = 16; //'璁㈠崟绫诲瀷:1鏅€?绉掓潃3鍥㈣喘'
+  string remark = 17; //'璁㈠崟澶囨敞'
+  string cancelReason = 18; //'鍙栨秷鍘熷洜'
+  int64 createdAt = 19; //'涓嬪崟鏃堕棿'
+  int64 updatedAt = 20; //'鏇存柊鏃堕棿'
+}
+
+message SearchOrdersResp {
+  int64 code=1;
+  string msg=2;
+  repeated Orders orders = 3; //orders
+}
+
+//--------------------------------products--------------------------------
+message Products {
+  int64 id = 1; //'鍟嗗搧ID'
+  int64 categoryId = 2; //'鍒嗙被ID'
+  string productNo = 3; //'鍟嗗搧缂栧彿'
+  string name = 4; //'鍟嗗搧鍚嶇О'
+  string keywords = 5; //'鍏抽敭璇?
+  string description = 6; //'鍟嗗搧鎻忚堪'
+  string mainImage = 7; //'涓诲浘'
+  double price = 8; //'浠锋牸'
+  int64 salesCount = 9; //'閿€閲?
+  int64 reviewCount = 10; //'璇勪环鏁?
+  int64 status = 11; //'鐘舵€?0涓嬫灦1涓婃灦'
+  int64 stock = 12; //'鍒嗙被ID'
+  int64 createdAt = 13; //'鍒涘缓鏃堕棿'
+  int64 updatedAt = 14; //'鏇存柊鏃堕棿'
+}
+
+message AddProductsReq {
+  int64 categoryId = 1; //'鍒嗙被ID'
+  string productNo = 3; //'鍟嗗搧缂栧彿'
+  string name = 4; //'鍟嗗搧鍚嶇О'
+  string keywords = 5; //'鍏抽敭璇?
+  string description = 6; //'鍟嗗搧鎻忚堪'
+  string mainImage = 7; //'涓诲浘'
+  double price = 8; //'浠锋牸'
+  int64 salesCount = 9; //'閿€閲?
+  int64 reviewCount = 10; //'璇勪环鏁?
+  int64 status = 11; //'鐘舵€?0涓嬫灦1涓婃灦'
+  int64 stock = 12; //'鍒嗙被ID'
+  int64 createdAt = 13; //'鍒涘缓鏃堕棿'
+  int64 updatedAt = 14; //'鏇存柊鏃堕棿'
+  int64 Quantity=15;
+}
+
+message AddProductsResp {
+  int64 code=1;
+  string msg=2;
+}
+
+message UpdateProductsReq {
+  int64 id = 1; //'鍟嗗搧ID'
+  int64 categoryId = 2; //'鍒嗙被ID'
+  string productNo = 3; //'鍟嗗搧缂栧彿'
+  string name = 4; //'鍟嗗搧鍚嶇О'
+  string keywords = 5; //'鍏抽敭璇?
+  string description = 6; //'鍟嗗搧鎻忚堪'
+  string mainImage = 7; //'涓诲浘'
+  double price = 8; //'浠锋牸'
+  int64 salesCount = 9; //'閿€閲?
+  int64 reviewCount = 10; //'璇勪环鏁?
+  int64 status = 11; //'鐘舵€?0涓嬫灦1涓婃灦'
+  int64 stock = 12; //'鍒嗙被ID'
+  int64 createdAt = 13; //'鍒涘缓鏃堕棿'
+  int64 updatedAt = 14; //'鏇存柊鏃堕棿'
+    int64 Quantity=15;
+}
+
+message UpdateProductsResp {
+  int64 code=1;
+  string msg=2;
+}
+
+message DelProductsReq {
+  int64 id = 1; //id
+}
+
+message DelProductsResp {
+  int64 code=1;
+  string msg=2;
+}
+
+message GetProductsByIdReq {
+  int64 id = 1; //id
+}
+
+message GetProductsByIdResp {
+  int64 code=1;
+  string msg=2;
+  Products products = 3; //products
+}
+
+message SearchProductsReq {
+  int64 page = 1; //page
+  int64 size = 2; //limit
+  string productNo = 5; //'鍟嗗搧缂栧彿'
+  string name = 6; //'鍟嗗搧鍚嶇О'
+}
+
+message SearchProductsResp {
+  int64 page = 1; //page
+  int64 size = 2; //limit
+  int64 code=3;
+  string msg=4;
+  repeated Products products =5; //products
+}
+message UpdatesStatusReq {
+ string order_sn=1;
+}
+
+message UpdatesStatusResp {
+
+}
+
+service product{ 
+
+
+	 //-----------------------orderItems----------------------- 
+	 rpc AddOrderItems(AddOrderItemsReq) returns (AddOrderItemsResp); 
+	 rpc UpdateOrderItems(UpdateOrderItemsReq) returns (UpdateOrderItemsResp); 
+	 rpc DelOrderItems(DelOrderItemsReq) returns (DelOrderItemsResp); 
+	 rpc GetOrderItemsById(GetOrderItemsByIdReq) returns (GetOrderItemsByIdResp); 
+	 rpc SearchOrderItems(SearchOrderItemsReq) returns (SearchOrderItemsResp); 
+	 //-----------------------orders----------------------- 
+	 rpc AddOrders(AddOrdersReq) returns (AddOrdersResp); 
+	 rpc UpdateOrders(UpdateOrdersReq) returns (UpdateOrdersResp); 
+	 rpc DelOrders(DelOrdersReq) returns (DelOrdersResp); 
+	 rpc GetOrdersById(GetOrdersByIdReq) returns (GetOrdersByIdResp); 
+	 rpc SearchOrders(SearchOrdersReq) returns (SearchOrdersResp);
+	 //-----------------------products----------------------- 
+	 rpc AddProducts(AddProductsReq) returns (AddProductsResp); 
+	 rpc UpdateProducts(UpdateProductsReq) returns (UpdateProductsResp); 
+	 rpc DelProducts(DelProductsReq) returns (DelProductsResp); 
+	 rpc GetProductsById(GetProductsByIdReq) returns (GetProductsByIdResp); 
+	 rpc SearchProducts(SearchProductsReq) returns (SearchProductsResp); 
+	 rpc UpdatesStatus(UpdatesStatusReq) returns (UpdatesStatusResp);
+
+
+
+}
